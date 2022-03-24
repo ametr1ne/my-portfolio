@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="" type="image/x-icon">
     <title>ametr1ne</title>
 </head>
 <body>
@@ -18,117 +18,40 @@
 </div>
 <div class="wrapper">
     <header class="header">
-        <a href="/" class="header__logo">ametr1ne.</a>
+        <div class="header__wrapper">
+            <a href="/" class="header__logo">ametr1ne</a>
+            <nav class="header__menu">
+                <div class="header__links">
+                    <div class="header__link">about</div>
+                    <div class="header__link">works</div>
+                    <div class="header__link">write me</div>
+                </div>
+                <div class="header__burger"></div>
+            </nav>
+        </div>
     </header>
-    <div class="sun"></div>
-
-    <div class="mountains">
-        <svg id="first" width="295" height="276" viewBox="0 0 295 276" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M147.5 0L294.291 276H0.708694L147.5 0Z" fill="#C4C4C4"/>
-        </svg>
-        <svg id="second" width="157" height="272" viewBox="0 0 157 272" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M78.5 0L156.875 271.5H0.124702L78.5 0Z" fill="#C4C4C4"/>
-        </svg>
-        <svg id="third" width="320" height="215" viewBox="0 0 320 215" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M160 0L319.349 214.5H0.651321L160 0Z" fill="#a8a7a7"/>
-        </svg>
-        <svg id="fourth" width="382" height="278" viewBox="0 0 382 278" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M191 0L381.526 277.5H0.474411L191 0Z" fill="#a8a7a7"/>
-        </svg>
-        <svg id="fifth" width="274" height="204" viewBox="0 0 274 204" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M137 0L273.832 204H0.167984L137 0Z" fill="#C4C4C4"/>
-        </svg>
-
-        <div class="man"></div>
     </div>
     <main class="main">
-        <div class="greeting first">
-            <h1 class="greeting__title">hey</h1>
-            <h2 class="greeting__subtitle">what are you thinking about?</h2>
+        <div class="main__head">
+            <h1>good <span>morning</span></h1>
         </div>
-        <div class="greeting seconds">
-            <h1 class="greeting__title">now</h1>
-            <h2 class="greeting__subtitle">lemme show you my works</h2>
-        </div>
-        <div class="greeting portfolio">
-            <h1>portfolio</h1>
-        </div>
-
-        <p class="works-empty">there's nothing here yet</p>
-        <div class="works">
-            <!-- <div class="works-item">
-                <img class="works-item__photo" src="img/igis.png" alt="igis">
-                <p class="works-item__desc">design + front-end</p>
-            </div> -->
-            <div class="someDiv">
-                <ul class="works-list">
-                    <li class="works-list_item">
-                        <a class="works-list_title">Title 1</a>
-                        <div class="works-list_limiter">
-                            <ul class="works-sublist">
-                                <li class="works-sublist_item">SubItem 1</li>
-                                <li class="works-sublist_item">SubItem 2</li>
-                                <li class="works-sublist_item">SubItem 3</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="works-list_item">
-                        <a class="works-list_title">Title 2</a>
-                        <div class="works-list_limiter">
-                            <ul class="works-sublist">
-                                <li class="works-sublist_item">SubItem 1</li>
-                                <li class="works-sublist_item">SubItem 2</li>
-                                <li class="works-sublist_item">SubItem 3</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                                <li class="works-sublist_item">SubItem 4</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="works-list_item">
-                        <a class="works-list_title">Title 3</a>
-                        <ul class="works-sublist">
-                            <li class="works-sublist_item">SubItem 1</li>
-                            <li class="works-sublist_item">SubItem 2</li>
-                            <li class="works-sublist_item">SubItem 3</li>
-                            <li class="works-sublist_item">SubItem 4</li>
-                        </ul>
-                    </li>
-                </ul>
+        <div class="main__content">
+            <div class="content-section about">
+                <h2>about</h2>
             </div>
-
+            <div class="content-section works">
+                <h2>works</h2>
+            </div>
+            <div class="content-section write-me">
+                <h2>write me</h2>
+            </div>
         </div>
     </main>
 
     <footer>
-        <div class="social-media">
-            <p class="social-media__title">my social media</p>
-            <div class="social-media__icons">
-                <div class="social-media__item">
-
-                </div>
-                <div class="social-media__item">
-
-                </div>
-            </div>
-        </div>
     </footer>
 </div>
 
 <script src="main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
-        integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
 </body>
 </html>
