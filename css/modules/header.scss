@@ -1,0 +1,85 @@
+.header {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  &__logo {
+    color: white;
+    transition: letter-spacing 0.5s;
+    font-size: 25px;
+
+    &:hover {
+      color: white;
+      letter-spacing: 2px;
+    }
+  }
+
+  &__burger {
+    height: 18px;
+    width: 40px;
+    position: relative;
+    cursor: pointer;
+    
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      border-radius: 15px;
+      transition: transform 0.5s, top 0.5s;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+
+  &__links {
+    visibility: hidden;
+    opacity: 0;
+    margin-right: 40px;
+    transition: opacity 0.3s;
+
+    .header__link {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .open {
+    .header__links {
+      visibility: visible;
+      opacity: 1;
+    }
+    .header__burger {
+      &:before {
+        transform: rotate(-45deg);
+        top: 9px;
+      }
+      &:after {
+        transform: rotate(45deg);
+        top: 9px;
+      }
+    }
+  }
+}
+
+/*---- keyframes ---------*/

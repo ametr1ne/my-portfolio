@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.main {
+
+  &__head {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      color: #a237ff;
+    }
+  }
+
+  &__content {
+    .content-section {
+      height: 100vh;
+
+      .section__wrapper {
+        max-width: 1440px;
+        padding: 50px 15px;
+      }
+    }
+  }
+
+  .about__section {
+    background-color: #452473;
+
+  }
+}

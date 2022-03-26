@@ -1,22 +1,32 @@
 /*--- Preloader -----*/
 
-window.onload = function () {
-    document.body.classList.add('loaded_hiding');
-    window.setTimeout(function () {
-        document.body.classList.add('loaded');
-        document.body.classList.remove('loaded_hiding');
-    }, 500);
-}
+/*---- Burger -----*/
+
+const burger = document.querySelector('.header__burger')
+
+burger.addEventListener('click', function () {
+    document.querySelector('.header__menu').classList.toggle('open')
+})
+
+
 
 /*------- portfolio is empty -------*/
 
-var elemCount = document.querySelectorAll('.works-item').length;
-let worksEmpty = document.getElementsByClassName('works-empty')[0];
+/*---- smooth scroll ------*/
 
-if (elemCount === 0) {
-    worksEmpty.style.display = 'flex';
-} else {
-    worksEmpty.style.display = 'none';
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        const blockID = anchor.getAttribute('href').substr(1)
+
+        document.getElementById(blockID).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    })
 }
 
 /*-------------------- FOR TESTS --------------------------*/
