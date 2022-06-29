@@ -9,8 +9,29 @@ burger.addEventListener('click', function () {
 })
 
 
-
 /*------- portfolio is empty -------*/
+
+/*-------- interactive greeting -------*/
+
+let date = new Date().getHours()
+let greeting = ''
+
+switch (true) {
+    case date >= 23 || date < 5:
+        greeting = 'night'
+        break
+    case 5 <= date && date < 11:
+        greeting = 'morning'
+        break
+    case 11 <= date && date < 16:
+        greeting = 'afternoon'
+        break
+    case 16 <= date && date < 23:
+        greeting = 'evening'
+        break
+}
+
+document.querySelector('.interactive').innerHTML = greeting
 
 /*---- smooth scroll ------*/
 
@@ -30,12 +51,3 @@ for (let anchor of anchors) {
 }
 
 /*-------------------- FOR TESTS --------------------------*/
-
-let menuItem = document.querySelectorAll('.works-list_title');
-
-for (let i = 0; i< menuItem.length; i++) {
-    menuItem[i].addEventListener('click', function (e) {
-        document.getElementsByClassName('works-list_limiter')[i].classList.toggle('open_list');
-    })
-}
-

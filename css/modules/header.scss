@@ -14,6 +14,7 @@
 
   &__logo {
     color: white;
+    letter-spacing: 1px;
     transition: letter-spacing 0.5s;
     font-size: 25px;
 
@@ -52,10 +53,14 @@
   }
 
   &__links {
-    visibility: hidden;
-    opacity: 0;
+    overflow: hidden;
     margin-right: 40px;
     transition: opacity 0.3s;
+
+    .links__wrapper {
+      transform: translateX(100%);
+      transition: transform .5s;
+    }
 
     .header__link {
       &:not(:last-child) {
@@ -65,9 +70,8 @@
   }
 
   .open {
-    .header__links {
-      visibility: visible;
-      opacity: 1;
+    .links__wrapper {
+      transform: translateX(0);
     }
     .header__burger {
       &:before {
