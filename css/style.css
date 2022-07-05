@@ -166,8 +166,12 @@ footer {
   min-height: 100vh;
 }
 .main__content .content-section .section__wrapper {
+  margin: 0 auto;
   max-width: 1320px;
   padding: 40px 15px 100px;
+}
+.main__content .content-section .section__wrapper .section__header {
+  margin-bottom: 100px;
 }
 .main .about {
   background-color: #452473;
@@ -182,35 +186,56 @@ footer {
 }
 .main .works {
   background-color: #151515;
+  padding-bottom: 100px;
 }
 .main .works .work {
-  margin-top: 120px;
   display: flex;
+  align-items: center;
+}
+.main .works .work-correction {
+  color: #989797;
 }
 .main .works .work__link {
   position: relative;
-  z-index: 1;
-}
-.main .works .work__link:hover .work__desc {
-  transform: translateX(0);
+  display: flex;
 }
 .main .works .work__photo {
   object-fit: cover;
   object-position: top;
-  width: 600px;
+  width: 700px;
   max-height: 700px;
 }
-.main .works .work .work__desc {
-  transform: translateX(-100%);
-  margin-left: 60px;
+.main .works .work__desc {
+  position: relative;
+}
+.main .works .work__desc h3, .main .works .work__desc p {
+  color: white;
+}
+.main .works .work__desc span {
+  border-radius: 5px;
+  padding: 0 10px;
+  background-color: #3cb081;
+}
+.main .works .work__desc .without-link {
+  color: #ee9696;
+}
+.main .works .work__stack {
+  margin-top: 30px;
+}
+.main .works .work__stack span {
+  background-color: #4194c0;
 }
 .main .works .work__name {
   position: absolute;
-  bottom: -50px;
+  bottom: -70px;
   font-size: 70px;
+  z-index: 1;
 }
 .main .works .work:nth-child(even) .work__name {
   right: -80px;
+}
+.main .works .work:nth-child(even) .work__desc {
+  margin-left: 50px;
 }
 .main .works .work:nth-child(odd) {
   flex-direction: row-reverse;
@@ -219,18 +244,38 @@ footer {
   margin-left: auto;
 }
 .main .works .work:nth-child(odd) .work__desc {
-  transform: translateX(100%);
-  margin-right: 60px;
+  margin-right: 50px;
 }
 .main .works .work:nth-child(odd) .work__name {
   left: -80px;
 }
+.main .works .work ~ .work {
+  margin-top: 160px;
+}
 .main .write-me {
+  height: 100vh;
   background: #452473;
 }
-.main .write-me .icon {
-  width: 50px;
-  height: 50px;
+.main .write-me .section__wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .write-me__header {
+  z-index: 2;
+}
+.main .write-me__contacts {
+  display: flex;
+  grid-gap: 40px;
+  transform: translateY(-120%);
+  transition: transform 0.5s;
+}
+.main .write-me__hover {
+  position: relative;
+}
+.main .write-me__hover:hover .write-me__contacts {
+  transform: translateY(0);
 }
 
 /*# sourceMappingURL=style.css.map */
