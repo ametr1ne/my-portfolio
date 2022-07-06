@@ -67,6 +67,23 @@ p {
   font-size: 30px;
 }
 
+@media (max-width: 1260px) {
+  h1 {
+    font-size: 55px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  a, p {
+    font-size: 20px;
+  }
+}
 .header {
   width: 100%;
   height: 100px;
@@ -174,15 +191,25 @@ footer {
   margin-bottom: 100px;
 }
 .main .about {
-  background-color: #452473;
+  background-color: #5613b4;
 }
 .main .about__content {
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 50px;
 }
 .main .about__content p {
   max-width: 700px;
+}
+.main .about__description {
+  margin-bottom: 20px;
+}
+.main .about p span {
+  background: #3cb081;
+  padding: 0 10px;
+  border-radius: 5px;
 }
 .main .works {
   background-color: #151515;
@@ -199,11 +226,15 @@ footer {
   position: relative;
   display: flex;
 }
+.main .works .work__link:hover .work__photo {
+  transform: scale(1.05);
+}
 .main .works .work__photo {
   object-fit: cover;
   object-position: top;
   width: 700px;
   max-height: 700px;
+  transition: transform 1s;
 }
 .main .works .work__desc {
   position: relative;
@@ -250,32 +281,103 @@ footer {
   left: -80px;
 }
 .main .works .work ~ .work {
-  margin-top: 160px;
+  margin-top: 200px;
 }
 .main .write-me {
   height: 100vh;
-  background: #452473;
+  background: #5613b4;
 }
 .main .write-me .section__wrapper {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 .main .write-me__header {
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  background: #ffffff;
+  position: relative;
   z-index: 2;
 }
+.main .write-me__header h2 {
+  color: black;
+}
 .main .write-me__contacts {
+  margin-top: 20px;
   display: flex;
   grid-gap: 40px;
-  transform: translateY(-120%);
+  transform: translateY(-140%);
   transition: transform 0.5s;
+}
+.main .write-me__contacts .contacts-item {
+  display: flex;
+  align-items: center;
+}
+.main .write-me__contacts .contacts-item svg {
+  margin-right: 10px;
+}
+.main .write-me__contacts .contacts-item .email path {
+  fill: #e17171;
 }
 .main .write-me__hover {
   position: relative;
+  cursor: pointer;
 }
 .main .write-me__hover:hover .write-me__contacts {
   transform: translateY(0);
+}
+@media (max-width: 1440px) {
+  .main__content .content-section .section__wrapper {
+    max-width: 1200px;
+  }
+}
+@media (max-width: 1260px) {
+  .main__content .content-section .section__wrapper {
+    max-width: 960px;
+  }
+  .main .works .work__name {
+    font-size: 50px;
+    bottom: -50px;
+  }
+  .main .works .work__photo {
+    max-height: 500px;
+    width: 500px;
+  }
+  .main .works .work:nth-child(odd) .work__desc {
+    margin-right: 20px;
+  }
+  .main .works .work:nth-child(even) .work__desc {
+    margin-left: 20px;
+  }
+}
+@media (max-width: 890px) {
+  .main .works .work {
+    flex-direction: column;
+  }
+  .main .works .work__desc {
+    margin-top: 50px;
+  }
+  .main .works .work:nth-child(even) .work__desc {
+    margin-left: 0;
+  }
+  .main .works .work:nth-child(odd) {
+    flex-direction: column;
+  }
+  .main .works .work:nth-child(odd) .work__link {
+    margin-right: auto;
+  }
+  .main .works .work:nth-child(odd) .work__desc {
+    margin-right: 0;
+  }
+}
+@media (max-width: 700px) {
+  .main .works .work__photo {
+    width: 300px;
+    max-height: 300px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

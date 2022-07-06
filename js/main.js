@@ -20,10 +20,10 @@ switch (true) {
     case date >= 23 || date < 5:
         greeting = 'night'
         break
-    case 5 <= date && date < 11:
+    case 5 <= date && date < 12:
         greeting = 'morning'
         break
-    case 11 <= date && date < 16:
+    case 12 <= date && date < 16:
         greeting = 'afternoon'
         break
     case 16 <= date && date < 23:

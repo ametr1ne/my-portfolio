@@ -70,3 +70,18 @@ h3 {
 p {
   font-size: 30px;
 }
+
+@media (max-width: 1260px) {
+  h1 {
+    font-size: 55px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  a, p {
+    font-size: 20px;
+  }
+}
