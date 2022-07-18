@@ -39,9 +39,9 @@
     &__content {
       height: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       margin-top: 50px;
+      grid-column-gap: 50px;
+
       p {
         max-width: 700px;
       }
@@ -54,6 +54,17 @@
         background: #3cb081;
         padding: 0 10px;
         border-radius: 5px;
+      }
+    }
+    &__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &__right {
+      img {
+        object-fit: contain;
+        width: 500px;
       }
     }
   }
@@ -85,7 +96,7 @@
         object-fit: cover;
         object-position: top;
         width: 700px;
-        max-height: 700px;
+        max-height: 690px;
         transition: transform 1s;
       }
 
@@ -162,54 +173,17 @@
       padding: 0;
     }
 
-    &__header {
+    &__1 {
       display: flex;
-      border-radius: 5px;
-      justify-content: center;
-      background: #ffffff;
+      font-size: 65px;
       position: relative;
-      z-index: 2;
-
-      h2 {
-        color: black;
-      }
     }
-
-    &__contacts {
-      margin-top: 20px;
-      display: flex;
-      grid-gap: 40px;
-      transform: translateY(-140%);
-      transition: transform .5s;
-
-      .contacts-item {
-        display: flex;
-        align-items: center;
-
-        svg {
-          margin-right: 10px;
-        }
-
-        .email {
-          path {
-            fill: #e17171;
-          }
-        }
-      }
+    p {
+      font-size: 18px;
+      color: #989797;
     }
-
-    &__hover {
-      position: relative;
-      cursor: pointer;
-      &:hover {
-        .write-me__contacts {
-          transform: translateY(0);
-        }
-      }
-    }
-
-    &__contacts {
-
+    &__2 {
+      font-size: 30px;
     }
   }
   
@@ -228,6 +202,13 @@
       .content-section {
         .section__wrapper {
           max-width: 960px;
+        }
+      }
+    }
+    .about {
+      &__right {
+        img {
+          width: 300px;
         }
       }
     }
@@ -285,12 +266,57 @@
   }
 
   @media (max-width: 700px) {
+    .content-section {
+      min-height: unset;
+
+      .section__wrapper {
+        padding: 10px 15px 30px;
+      }
+    }
+    .about {
+      &__content {
+        flex-direction: column-reverse;
+      }
+
+      &__right {
+        margin-bottom: 30px;
+      }
+    }
     .works {
+      padding-bottom: 0;
       .work {
-        &__photo {
-          width: 300px;
-          max-height: 300px;
+        &__link {
+          width: 100%;
         }
+        &__photo {
+          width: 100%;
+          max-height: 500px;
+        }
+        &__name {
+          right: 0;
+        }
+        &:nth-child(even) {
+          .work__name {
+            right: 0;
+          }
+        }
+        &:nth-child(odd) {
+          .work__name {
+            left: 0;
+          }
+        }
+
+        & ~ .work {
+          margin-top: 50px;
+        }
+      }
+    }
+    .write-me {
+      &__1 {
+        font-size: 40px;
+      }
+      &__2 {
+        font-size: 19px;
       }
     }
   }

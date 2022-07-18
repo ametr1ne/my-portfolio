@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/main.js"></script>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <title>ametr1ne</title>
 </head>
 <body>
@@ -43,15 +43,21 @@
             <div class="section__wrapper">
                 <h2>about me</h2>
                 <div class="about__content">
-                    <p class="about__description">
-                        Hey, I'm Nikon, front-end developer. I adore beautiful designs and coding.
-                        When I was little, I went to a drawing class, but then I gave up. But the feeling of beauty
-                        remains and I am ready to help you show your ideas to the whole world
-                    </p>
-                    <p>My stack:</p>
-                    <p><span>HTML</span> <span>CSS</span> <span>SCSS</span> <span>Vanilla JS</span> <span>JQuery</span><br>
-                        <span>React JS</span>
-                    </p>
+                    <div class="about__left">
+                        <p class="about__description">
+                            Hey, I'm Nikon, front-end developer. I adore beautiful designs and coding.
+                            When I was little, I went to a drawing class, but then I gave up. But the feeling of beauty
+                            remains and I am ready to help you show your ideas to the whole world
+                        </p>
+                        <p>My stack:</p>
+                        <p><span>HTML</span> <span>CSS</span> <span>SCSS</span> <span>Vanilla JS</span>
+                            <span>JQuery</span><br>
+                            <span>React JS</span>
+                        </p>
+                    </div>
+                    <div class="about__right">
+                        <img src="img/me.jpg" alt="me">
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,14 +100,15 @@
                     </div>
                 </div>
                 <div class="work">
-                    <a href="https://yodizschool.ru/online" class="work__link">
-                        <img class="work__photo" src="img/yzschoolonline.webp" alt="yodizschool">
+                    <a target="_blank" href="https://yodizschool.ru/online" class="work__link">
+                        <img class="work__photo" src="img/yzonline_top.jpg" alt="yodizschool">
                         <b class="work__name">Online Course</b>
                     </a>
                     <div class="work__desc">
                         <h3>Layout</h3>
                         <p>A landing page for presentation main course from Yodiz School.
-                        On the page a <span>parallax</span> effect, <span>carousel</span>, <span>forms</span> and more</p>
+                            On the page a <span>parallax</span> effect, <span>carousel</span>, <span>forms</span> and
+                            more</p>
                         <p class="work__stack">Stack: <span>HTML</span> <span>SCSS</span> <span>JQuery</span>
                             <span>PHP</span></p>
                     </div>
@@ -110,39 +117,9 @@
         </div>
         <div id="write-me" class="content-section write-me">
             <div class="section__wrapper">
-                <div class="write-me__hover">
-                    <div class="write-me__header">
-                        <h2>write me</h2>
-                    </div>
-                    <div class="write-me__contacts">
-                        <div class="contacts-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
-                                <linearGradient id="BiF7D16UlC0RZ_VqXJHnXa" x1="9.858" x2="38.142" y1="9.858"
-                                                y2="38.142"
-                                                gradientUnits="userSpaceOnUse">
-                                    <stop offset="0" stop-color="#33bef0"/>
-                                    <stop offset="1" stop-color="#0a85d9"/>
-                                </linearGradient>
-                                <path fill="url(#BiF7D16UlC0RZ_VqXJHnXa)"
-                                      d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/>
-                                <path d="M10.119,23.466c8.155-3.695,17.733-7.704,19.208-8.284c3.252-1.279,4.67,0.028,4.448,2.113	c-0.273,2.555-1.567,9.99-2.363,15.317c-0.466,3.117-2.154,4.072-4.059,2.863c-1.445-0.917-6.413-4.17-7.72-5.282	c-0.891-0.758-1.512-1.608-0.88-2.474c0.185-0.253,0.658-0.763,0.921-1.017c1.319-1.278,1.141-1.553-0.454-0.412	c-0.19,0.136-1.292,0.935-1.745,1.237c-1.11,0.74-2.131,0.78-3.862,0.192c-1.416-0.481-2.776-0.852-3.634-1.223	C8.794,25.983,8.34,24.272,10.119,23.466z"
-                                      opacity=".05"/>
-                                <path d="M10.836,23.591c7.572-3.385,16.884-7.264,18.246-7.813c3.264-1.318,4.465-0.536,4.114,2.011	c-0.326,2.358-1.483,9.654-2.294,14.545c-0.478,2.879-1.874,3.513-3.692,2.337c-1.139-0.734-5.723-3.754-6.835-4.633	c-0.86-0.679-1.751-1.463-0.71-2.598c0.348-0.379,2.27-2.234,3.707-3.614c0.833-0.801,0.536-1.196-0.469-0.508	c-1.843,1.263-4.858,3.262-5.396,3.625c-1.025,0.69-1.988,0.856-3.664,0.329c-1.321-0.416-2.597-0.819-3.262-1.078	C9.095,25.618,9.075,24.378,10.836,23.591z"
-                                      opacity=".07"/>
-                                <path fill="#fff"
-                                      d="M11.553,23.717c6.99-3.075,16.035-6.824,17.284-7.343c3.275-1.358,4.28-1.098,3.779,1.91	c-0.36,2.162-1.398,9.319-2.226,13.774c-0.491,2.642-1.593,2.955-3.325,1.812c-0.833-0.55-5.038-3.331-5.951-3.984	c-0.833-0.595-1.982-1.311-0.541-2.721c0.513-0.502,3.874-3.712,6.493-6.21c0.343-0.328-0.088-0.867-0.484-0.604	c-3.53,2.341-8.424,5.59-9.047,6.013c-0.941,0.639-1.845,0.932-3.467,0.466c-1.226-0.352-2.423-0.772-2.889-0.932	C9.384,25.282,9.81,24.484,11.553,23.717z"/>
-                            </svg>
-                            <a target="_blank" href="https://telegram.me/ametr1ne">Telegram</a>
-                        </div>
-                        <div class="contacts-item">
-                            <?xml version="1.0" ?>
-                            <svg class="email" viewBox="0 0 24 24" width="48" height="48"
-                                 xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><g id="info"/>
-                                <g id="icons"><path d="M20,3H4C1.8,3,0,4.8,0,7v10c0,2.2,1.8,4,4,4h16c2.2,0,4-1.8,4-4V7C24,4.8,22.2,3,20,3z M21.6,8.8l-7.9,5.3   c-0.5,0.3-1.1,0.5-1.7,0.5s-1.2-0.2-1.7-0.5L2.4,8.8C2,8.5,1.9,7.9,2.2,7.4C2.5,7,3.1,6.9,3.6,7.2l7.9,5.3c0.3,0.2,0.8,0.2,1.1,0   l7.9-5.3c0.5-0.3,1.1-0.2,1.4,0.3C22.1,7.9,22,8.5,21.6,8.8z" id="email"/></g></svg>
-                            <a target="_blank" href="mailto: nikon.filanovsky@gmail.com">E-mail</a>
-                        </div>
-                    </div>
-                </div>
+                <p><a class="write-me__1" target="_blank" href="https://telegram.me/ametr1ne">
+                    t.me/ametr1ne</a>
+                    or <a class="write-me__2" target="_blank" href="mailto: nikon.filanovsky@gmail.com">nikon.filanovsky@gmail.com</a></p>
             </div>
         </div>
     </div>

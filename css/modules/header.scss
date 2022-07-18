@@ -84,6 +84,13 @@
       }
     }
   }
+
+  @media (max-width: 700px) {
+    &__wrapper {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
 }
 
 /*---- keyframes ---------*/
