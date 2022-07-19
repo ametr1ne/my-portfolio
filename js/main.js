@@ -6,8 +6,24 @@ const burger = document.querySelector('.header__burger')
 
 burger.addEventListener('click', function () {
     document.querySelector('.header__menu').classList.toggle('open')
+
+    if (window.matchMedia("(max-width: 767px)").matches) {
+        document.body.classList.toggle('overflow-hidden')
+    }
 })
 
+
+if (window.matchMedia("(max-width: 767px)").matches) {
+
+    const header_links = document.querySelectorAll('.header__link');
+
+    header_links.forEach(function (value) {
+        value.addEventListener('click', function () {
+            document.body.classList.remove('overflow-hidden')
+            document.querySelector('.header__menu').classList.remove('open')
+        })
+    })
+}
 
 /*------- portfolio is empty -------*/
 
