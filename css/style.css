@@ -419,6 +419,9 @@ footer {
   .main .about__content {
     flex-direction: column-reverse;
   }
+  .main .about__left p br {
+    display: none;
+  }
   .main .about__right {
     margin-bottom: 30px;
   }

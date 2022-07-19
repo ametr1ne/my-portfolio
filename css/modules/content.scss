@@ -287,7 +287,13 @@
       &__content {
         flex-direction: column-reverse;
       }
-
+      &__left {
+        p {
+          br {
+            display: none;
+          }
+        }
+      }
       &__right {
         margin-bottom: 30px;
       }
