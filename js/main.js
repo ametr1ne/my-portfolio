@@ -1,5 +1,9 @@
 /*--- Preloader -----*/
 
+window.onload = () => {
+    document.querySelector('.preloader').classList.add('hidden')
+}
+
 /*---- Burger -----*/
 
 const burger = document.querySelector('.header__burger')

@@ -12,15 +12,25 @@
 </head>
 <body>
 <div class="preloader">
-    <div class="preloader__row">
-        <div class="preloader__item"></div>
-        <div class="preloader__item"></div>
-    </div>
+    <svg>
+        <g>
+            <path d="M 50,100 A 1,1 0 0 1 50,0"/>
+        </g>
+        <g>
+            <path d="M 50,75 A 1,1 0 0 0 50,-25"/>
+        </g>
+        <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#FF56A1;stop-opacity:1"/>
+                <stop offset="100%" style="stop-color:#FF9350;stop-opacity:1"/>
+            </linearGradient>
+        </defs>
+    </svg>
 </div>
 
 <header class="header">
     <div class="header__wrapper">
-        <a href="/" class="header__logo">ametr1ne</a>
+        <a href="/" class="header__logo"><small>by</small>ametr1ne</a>
         <nav class="header__menu">
             <div class="header__links">
                 <div class="links__wrapper">
@@ -68,22 +78,8 @@
                     <small class="work-correction">all works are here with adaptation to all screen resolutions</small>
                 </div>
                 <div class="work">
-                    <a href="https://yodizschool.ru" target="_blank" class="work__link">
-                        <img class="work__photo" src="img/yzschool.webp" alt="yodizschool">
-                        <b class="work__name">Yodiz School</b>
-                    </a>
-                    <div class="work__desc">
-                        <h3>Layout</h3>
-                        <p>They were made up according to the layout of the page
-                            There are <span>parallax</span> effects, a <span>carousel</span>,
-                            <span>drop-down</span> lists.</p>
-                        <p class="work__stack">Stack: <span>HTML</span> <span>SCSS</span> <span>JQuery</span>
-                            <span>PHP</span></p>
-                    </div>
-                </div>
-                <div class="work">
                     <a class="work__link">
-                        <img class="work__photo" src="img/lk.webp" alt="yodizschool">
+                        <img class="work__photo" src="img/lkdesign.webp" alt="yodizschool">
                         <b class="work__name">Yodiz Courses</b>
                     </a>
                     <div class="work__desc">
@@ -95,6 +91,20 @@
                             <span>video</span> lessons, <span>progress</span> tracking, <span>timecodes</span> <span>modal windows</span>,
                             <span>timecodes</span> and
                             much more.</p>
+                        <p class="work__stack">Stack: <span>HTML</span> <span>SCSS</span> <span>JQuery</span>
+                            <span>PHP</span></p>
+                    </div>
+                </div>
+                <div class="work">
+                    <a href="https://yodizschool.ru" target="_blank" class="work__link">
+                        <img class="work__photo" src="img/yzschool.webp" alt="yodizschool">
+                        <b class="work__name">Yodiz School</b>
+                    </a>
+                    <div class="work__desc">
+                        <h3>Layout</h3>
+                        <p>They were made up according to the layout of the page
+                            There are <span>parallax</span> effects, a <span>carousel</span>,
+                            <span>drop-down</span> lists.</p>
                         <p class="work__stack">Stack: <span>HTML</span> <span>SCSS</span> <span>JQuery</span>
                             <span>PHP</span></p>
                     </div>
@@ -119,7 +129,8 @@
             <div class="section__wrapper">
                 <p><a class="write-me__1" target="_blank" href="https://telegram.me/ametr1ne">
                     t.me/ametr1ne</a>
-                    or <a class="write-me__2" target="_blank" href="mailto: nikon.filanovsky@gmail.com">nikon.filanovsky@gmail.com</a></p>
+                    or <a class="write-me__2" target="_blank" href="mailto: nikon.filanovsky@gmail.com">nikon.filanovsky@gmail.com</a>
+                </p>
             </div>
         </div>
     </div>

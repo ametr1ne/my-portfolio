@@ -18,6 +18,12 @@
     transition: letter-spacing 0.5s;
     font-size: 25px;
 
+    small {
+      color: #e0e0e0;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+
     &:hover {
       color: white;
       letter-spacing: 2px;
