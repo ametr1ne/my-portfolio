@@ -314,6 +314,7 @@ footer {
   margin-bottom: 20px;
 }
 .main .about p span {
+  white-space: nowrap;
   background: #3cb081;
   padding: 0 10px;
   border-radius: 5px;
@@ -359,6 +360,7 @@ footer {
   color: white;
 }
 .main .works .work__desc span {
+  white-space: nowrap;
   border-radius: 5px;
   padding: 0 10px;
   background-color: #3cb081;
@@ -370,6 +372,7 @@ footer {
   margin-top: 30px;
 }
 .main .works .work__stack span {
+  white-space: nowrap;
   background-color: #4194c0;
 }
 .main .works .work__name {
