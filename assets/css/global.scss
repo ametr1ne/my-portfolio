@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
 
 @font-face {
-  font-family: 'BroadwayD';
-  src: url('../fonts/BroadwayD.woff2') format('woff2'),
-  url('../fonts/BroadwayD.woff') format('woff');
+  font-family: "BroadwayD";
+  src: url("../fonts/BroadwayD.woff2") format("woff2"),
+    url("../fonts/BroadwayD.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -35,7 +35,7 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #151515;
   box-sizing: border-box;
   color: white;
@@ -57,7 +57,7 @@ a {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 120px;
   font-weight: normal;
 }
 
@@ -85,7 +85,8 @@ p {
   h3 {
     font-size: 30px;
   }
-  a, p {
+  a,
+  p {
     font-size: 20px;
   }
 }
