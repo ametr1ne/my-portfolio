@@ -104,7 +104,8 @@
       &__desc {
         position: relative;
 
-        h3, p {
+        h3,
+        p {
           color: white;
         }
 
@@ -162,6 +163,18 @@
         margin-top: 200px;
       }
     }
+
+    .conclusion {
+      margin-top: 200px;
+      text-align: center;
+
+      a {
+        padding: 5px 10px;
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+      }
+    }
   }
 
   .write-me {
@@ -189,7 +202,7 @@
       font-size: 30px;
     }
   }
-  
+
   @media (max-width: 1440px) {
     &__content {
       .content-section {
@@ -352,5 +365,3 @@
     }
   }
 }
-
-
