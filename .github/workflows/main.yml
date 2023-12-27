@@ -26,3 +26,5 @@ jobs:
             cd /var/www/myPortfolio/
             git pull origin master
             git status
+            yarn
+            yarn build
