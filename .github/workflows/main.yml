@@ -23,9 +23,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cd /var/www/myPortfolio/
+            cd /var/www/my-website/
             git pull origin master
             git status
             yarn
             yarn build
-            pm2 restart next-js
+            pm2 restart my-website
