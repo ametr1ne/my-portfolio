@@ -1,11 +1,15 @@
 .content {
   margin-top: 60px;
   display: flex;
+  justify-content: space-between;
   gap: 50px;
   padding: 0 20px;
 
   .image {
     border-radius: 160px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 
   h3 {
