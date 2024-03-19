@@ -5,7 +5,7 @@
   border-radius: 20px;
   background-color: $secondary-color;
   cursor: pointer;
-  transition: background-color 0.3s ease 0.5s;
+  transition: background-color 0.3s ease;
 
   .line {
     position: absolute;
@@ -15,8 +15,7 @@
     width: 25px;
     height: 2px;
     background-color: $primary-color;
-    transition: rotate 0.3s ease 0.5s, background-color 0.3s ease 0.5s,
-      top 0.3s ease 0.5s;
+    transition: rotate 0.3s ease, background-color 0.3s ease, top 0.3s ease;
 
     &:nth-child(1) {
       top: 40%;

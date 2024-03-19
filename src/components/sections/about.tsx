@@ -22,13 +22,15 @@ const About = () => {
         thirdText={thirdText}
       />
       <div className={styles.content}>
-        <Image
-          className={styles.image}
-          src={"/me.png"}
-          width={969}
-          height={835}
-          alt="photo"
-        />
+        <div className={styles.imgContainer}>
+          <Image
+            className={styles.image}
+            src={"/me.png"}
+            width={969}
+            height={835}
+            alt="photo"
+          />
+        </div>
         <div className={styles.text}>
           <h3>Nikon Sharipov</h3>
           <p>

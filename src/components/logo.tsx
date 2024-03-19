@@ -1,5 +1,3 @@
-
-
 const Logo = ({ className }: { className?: string }) => {
   return (
     <svg

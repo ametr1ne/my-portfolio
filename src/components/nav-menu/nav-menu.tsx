@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import styles from "./nav-menu.module.scss";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { menuSlide, slide } from "./menu-anim";
+import clsx from "clsx";
 
 const navItems = [
   {
@@ -27,32 +28,44 @@ const navItems = [
   },
 ];
 
-const NavMenu = ({ close }: { close: () => void }) => {
+const NavMenu = ({
+  close,
+  isActive,
+}: {
+  close: () => void;
+  isActive: boolean;
+}) => {
   return (
-    <motion.div
-      variants={menuSlide}
-      initial="initial"
-      animate="enter"
-      exit="exit"
-      className={styles.overlay}
+    <div
+      className={clsx(styles.overlay, isActive && styles.active)}
       onClick={() => close()}>
-      <nav className={styles.content} onClick={(e) => e.stopPropagation()}>
-        <ul className={styles.list}>
-          {navItems.map((item, index) => (
-            <motion.li
-              custom={index}
-              variants={slide}
-              initial="initial"
-              animate="enter"
-              exit="exit"
-              className={styles.listItem}
-              key={item.title}>
-              <Link href={item.href}>{item.title}</Link>
-            </motion.li>
-          ))}
-        </ul>
-      </nav>
-    </motion.div>
+      <AnimatePresence mode="wait">
+        {isActive && (
+          <motion.nav
+            variants={menuSlide}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            className={styles.content}
+            onClick={(e) => e.stopPropagation()}>
+            <ul className={styles.list}>
+              {navItems.map((item, index) => (
+                <motion.li
+                  custom={index}
+                  variants={slide}
+                  initial="initial"
+                  animate="enter"
+                  exit="exit"
+                  className={styles.listItem}
+                  key={item.title}>
+                  <Link href={item.href}>{item.title}</Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 

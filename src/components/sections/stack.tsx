@@ -20,10 +20,6 @@ const skills = [
     color: "hsl(335.93deg 100% 67.25%)",
   },
   {
-    text: "GSAP",
-    color: "#0ae448",
-  },
-  {
     text: "Redux Toolkit",
     color: "#8C0CF0",
   },
