@@ -1,0 +1,53 @@
+.burger {
+  position: relative;
+  height: 55px;
+  width: 55px;
+  border-radius: 20px;
+  background-color: $secondary-color;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0.5s;
+
+  .line {
+    position: absolute;
+    left: 50%;
+    rotate: (-7deg);
+    translate: (-50%);
+    width: 25px;
+    height: 2px;
+    background-color: $primary-color;
+    transition: rotate 0.3s ease 0.5s, background-color 0.3s ease 0.5s,
+      top 0.3s ease 0.5s;
+
+    &:nth-child(1) {
+      top: 40%;
+    }
+    &:nth-child(2) {
+      top: 60%;
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+
+    .line {
+      rotate: (0deg);
+    }
+  }
+
+  &.active {
+    background-color: $primary-color;
+
+    .line {
+      background-color: $secondary-color;
+
+      &:nth-child(1) {
+        rotate: 45deg;
+        top: 50%;
+      }
+      &:nth-child(2) {
+        rotate: -45deg;
+        top: 50%;
+      }
+    }
+  }
+}

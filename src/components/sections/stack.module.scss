@@ -1,0 +1,18 @@
+.content {
+  margin-top: 80px;
+
+  .list {
+    &Item {
+      position: relative;
+      top: 0;
+      border-top: 1px solid $secondary-color;
+      padding: 0 50px;
+      font-size: 5vw;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $invactive-color;
+      cursor: pointer;
+      margin-bottom: -2vw;
+    }
+  }
+}

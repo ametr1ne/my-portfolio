@@ -1,0 +1,38 @@
+.wrapper {
+  height: 300px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid $secondary-color;
+}
+
+.sliderContainer {
+  position: absolute;
+  height: 300px;
+}
+
+.slider {
+  position: relative;
+  white-space: nowrap;
+
+  h2 {
+    position: relative;
+    margin: 0px;
+    color: $secondary-color;
+    font-size: 230px;
+    font-weight: 700;
+    padding-right: 50px;
+    text-transform: uppercase;
+
+    &:nth-of-type(2) {
+      position: absolute;
+      left: 100%;
+      top: 0;
+    }
+    &:nth-of-type(3) {
+      position: absolute;
+      left: 200%;
+      top: 0;
+    }
+  }
+}
