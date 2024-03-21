@@ -1,55 +1,31 @@
 "use client";
 
-import { RefObject, useEffect, useRef } from "react";
-import styles from "./driving-title.module.scss";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+import styles from "./driving-title.module.scss";
 
 type Props = {
   text: string;
-  firstText: RefObject<HTMLHeadingElement>;
-  secondText: RefObject<HTMLHeadingElement>;
-  thirdText: RefObject<HTMLHeadingElement>;
-  slider: RefObject<HTMLDivElement>;
 };
 
-const DrivingTitle = ({
-  text,
-  firstText,
-  secondText,
-  thirdText,
-  slider,
-}: Props) => {
+const DrivingTitle = ({ text }: Props) => {
   let xPercent = 0;
-  let direction = -1;
+
+  const slider = useRef<HTMLDivElement>(null);
+  const firstText = useRef<HTMLHeadingElement>(null);
+  const secondText = useRef<HTMLHeadingElement>(null);
+  const thirdText = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.to(slider.current, {
-      scrollTrigger: {
-        trigger: document.documentElement,
-        scrub: 0.5,
-        start: 0,
-        end: window.innerHeight,
-        onUpdate: (e) => (direction = e.direction * -1),
-      },
-
-      x: "-500px",
-    });
-
     gsap.set(secondText.current, {
-      // @ts-ignore
-      left: secondText.current.getBoundingClientRect().width,
+      left: secondText.current?.getBoundingClientRect().width,
     });
 
     requestAnimationFrame(animate);
   }, []);
 
   const animate = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    } else if (xPercent > 0) {
+    if (xPercent > 0) {
       xPercent = -100;
     }
 
@@ -59,7 +35,7 @@ const DrivingTitle = ({
 
     requestAnimationFrame(animate);
 
-    xPercent += 0.1 * direction;
+    xPercent += 0.1;
   };
 
   return (

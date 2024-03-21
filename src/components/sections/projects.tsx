@@ -6,20 +6,14 @@ import styles from "./projects.module.scss";
 import { useRef } from "react";
 
 const Projects = () => {
-  const slider = useRef(null);
-  const firstText = useRef(null);
-  const secondText = useRef(null);
-  const thirdText = useRef(null);
+  const sectionRef = useRef(null);
 
   return (
-    <section className={clsx("section", styles.section)}>
-      <DrivingTitle
-        text="projects"
-        slider={slider}
-        firstText={firstText}
-        secondText={secondText}
-        thirdText={thirdText}
-      />
+    <section
+      ref={sectionRef}
+      className={clsx("section", styles.section)}
+      id="projects">
+      <DrivingTitle text="projects" />
       <h4>Soon...</h4>
     </section>
   );

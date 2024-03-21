@@ -5,6 +5,8 @@ import styles from "./nav-menu.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import { menuSlide, slide } from "./menu-anim";
 import clsx from "clsx";
+import gsap from "gsap";
+import { useLenis } from "@studio-freight/react-lenis";
 
 const navItems = [
   {
@@ -35,6 +37,8 @@ const NavMenu = ({
   close: () => void;
   isActive: boolean;
 }) => {
+  const lenis = useLenis();
+
   return (
     <div
       className={clsx(styles.overlay, isActive && styles.active)}
@@ -58,7 +62,14 @@ const NavMenu = ({
                   exit="exit"
                   className={styles.listItem}
                   key={item.title}>
-                  <Link href={item.href}>{item.title}</Link>
+                  <Link
+                    onClick={() => {
+                      lenis?.scrollTo(item.href === "/" ? 0 : `${item.href}`);
+                      close();
+                    }}
+                    href={item.href}>
+                    {item.title}
+                  </Link>
                 </motion.li>
               ))}
             </ul>

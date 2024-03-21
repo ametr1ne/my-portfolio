@@ -1,10 +1,10 @@
 "use client";
 
+import clsx from "clsx";
+import gsap from "gsap";
 import { MouseEvent, useRef } from "react";
 import DrivingTitle from "../driving-title";
 import styles from "./stack.module.scss";
-import gsap from "gsap";
-import clsx from "clsx";
 
 const skills = [
   {
@@ -48,21 +48,14 @@ const Stack = () => {
       delay: 0.1,
     });
   };
-
-  const slider = useRef(null);
-  const firstText = useRef(null);
-  const secondText = useRef(null);
-  const thirdText = useRef(null);
+  const sectionRef = useRef(null);
 
   return (
-    <section className={clsx("section", styles.section)}>
-      <DrivingTitle
-        text="my stack"
-        slider={slider}
-        firstText={firstText}
-        secondText={secondText}
-        thirdText={thirdText}
-      />
+    <section
+      ref={sectionRef}
+      className={clsx("section", styles.section)}
+      id="stack">
+      <DrivingTitle text="my stack" />
       <div className={styles.content}>
         <ul className={styles.list}>
           {skills.map((skill, index) => (

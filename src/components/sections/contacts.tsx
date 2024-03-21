@@ -17,20 +17,11 @@ const socials = [
 ];
 
 const Contacts = () => {
-  const slider = useRef(null);
-  const firstText = useRef(null);
-  const secondText = useRef(null);
-  const thirdText = useRef(null);
+  const sectionRef = useRef(null);
 
   return (
-    <section className={clsx("section")}>
-      <DrivingTitle
-        text="contacts"
-        slider={slider}
-        firstText={firstText}
-        secondText={secondText}
-        thirdText={thirdText}
-      />
+    <section className={clsx("section")} id="contact">
+      <DrivingTitle text="contacts" />
       <ul className={styles.list}>
         {socials.map((item) => (
           <li className={styles.listItem} key={item.name}>
