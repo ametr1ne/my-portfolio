@@ -1,9 +1,7 @@
 "use client";
 
-import clsx from "clsx";
-import DrivingTitle from "../driving-title";
+import SectionLayout from "../section-layout";
 import styles from "./contacts.module.scss";
-import { useRef } from "react";
 
 const socials = [
   {
@@ -17,11 +15,9 @@ const socials = [
 ];
 
 const Contacts = () => {
-  const sectionRef = useRef(null);
 
   return (
-    <section className={clsx("section")} id="contact">
-      <DrivingTitle text="contacts" />
+    <SectionLayout title="contacts" id="contacts" className={styles.section}>
       <ul className={styles.list}>
         {socials.map((item) => (
           <li className={styles.listItem} key={item.name}>
@@ -31,7 +27,7 @@ const Contacts = () => {
           </li>
         ))}
       </ul>
-    </section>
+    </SectionLayout>
   );
 };
 

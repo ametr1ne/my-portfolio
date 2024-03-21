@@ -11,7 +11,7 @@ import { useLenis } from "@studio-freight/react-lenis";
 const navItems = [
   {
     title: "About me",
-    href: "/",
+    href: "#about",
   },
 
   {
@@ -25,8 +25,8 @@ const navItems = [
   },
 
   {
-    title: "Contact",
-    href: "#contact",
+    title: "Contacts",
+    href: "#contacts",
   },
 ];
 

@@ -1,0 +1,38 @@
+.container {
+  position: fixed;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $secondary-color;
+  color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  clip-path: inset(0 0 0 0);
+
+  .logo {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+
+    circle {
+      &:nth-child(1) {
+        fill: $primary-color;
+      }
+      &:nth-child(2) {
+        fill: $secondary-color;
+      }
+    }
+  }
+
+  @media ($media-sm) {
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

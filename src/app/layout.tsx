@@ -3,6 +3,7 @@ import Providers from "@/components/providers";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.scss";
+import SplashScreen from "@/components/splash-screen";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
+          <SplashScreen />
         </Providers>
       </body>
     </html>

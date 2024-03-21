@@ -7,12 +7,33 @@
       top: 0;
       border-top: 1px solid $secondary-color;
       padding: 0 50px;
-      font-size: 5vw;
+      font-size: 80px;
       font-weight: 600;
       text-transform: uppercase;
       color: $invactive-color;
       cursor: pointer;
-      margin-bottom: -2vw;
+      margin-bottom: -30px;
+      background-color: $primary-color;
+    }
+  }
+
+  @media ($media-md) {
+    .list {
+      &Item {
+        margin-bottom: 0;
+
+        &:last-child {
+          border-bottom: 1px solid $secondary-color;
+        }
+      }
+    }
+  }
+  @media ($media-sm) {
+    .list {
+      &Item {
+        padding: 0 20px;
+        font-size: 40px;
+      }
     }
   }
 }

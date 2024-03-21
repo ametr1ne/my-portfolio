@@ -36,3 +36,28 @@
     }
   }
 }
+
+@media ($media-md) {
+  .wrapper,
+  .sliderContainer {
+    height: 230px;
+  }
+
+  .slider {
+    h2 {
+      font-size: 180px;
+    }
+  }
+}
+@media ($media-sm) {
+  .wrapper,
+  .sliderContainer {
+    height: 130px;
+  }
+
+  .slider {
+    h2 {
+      font-size: 100px;
+    }
+  }
+}

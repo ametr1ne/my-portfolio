@@ -39,8 +39,43 @@
         line-height: 1.1;
         transition: color 0.3s ease;
 
-        &:hover {
-          color: $primary-color;
+        @media (hover: hover) {
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  @media ($media-md) {
+    .content {
+      padding: 50px 70px;
+
+      .list {
+        &Item {
+          font-size: 80px;
+        }
+      }
+    }
+  }
+
+  @media ($media-sm) {
+    .content {
+      width: 100%;
+      padding: 50px 20px 130px;
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &Item {
+          font-size: 50px;
+
+          &:active {
+            color: $primary-color;
+          }
         }
       }
     }

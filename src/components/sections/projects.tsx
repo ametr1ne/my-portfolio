@@ -1,21 +1,13 @@
 "use client";
 
-import clsx from "clsx";
-import DrivingTitle from "../driving-title";
+import SectionLayout from "../section-layout";
 import styles from "./projects.module.scss";
-import { useRef } from "react";
 
 const Projects = () => {
-  const sectionRef = useRef(null);
-
   return (
-    <section
-      ref={sectionRef}
-      className={clsx("section", styles.section)}
-      id="projects">
-      <DrivingTitle text="projects" />
+    <SectionLayout title="projects" id="projects" className={styles.section}>
       <h4>Soon...</h4>
-    </section>
+    </SectionLayout>
   );
 };
 
