@@ -1,9 +1,10 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import SectionLayout from "../section-layout";
 import styles from "./about.module.scss";
 
@@ -14,23 +15,46 @@ you show your ideas to the whole world`;
 
 const About = () => {
   const contentRef = useRef(null);
-  const imageRef = useRef(null);
-  const nameRef = useRef<HTMLSpanElement>(null);
-  const lastNameRef = useRef<HTMLSpanElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const imageContainerRef = useRef(null);
   const wordsRefArray = useRef<HTMLSpanElement[]>([]);
   wordsRefArray.current = [];
 
-  useEffect(() => {
+  useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    let mm = gsap.matchMedia();
+
     gsap.to(imageRef.current, {
+      yPercent: 30,
+      ease: "none",
       scrollTrigger: {
-        trigger: imageRef.current,
-        start: "top 50%",
-        end: "bottom 50%",
+        trigger: contentRef.current,
         scrub: true,
       },
-      clipPath: "circle(100% at 63% 38%)",
+    });
+
+    mm.add("(max-width: 767px)", () => {
+      gsap.to(imageContainerRef.current, {
+        scrollTrigger: {
+          trigger: imageContainerRef.current,
+          start: "top 70%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+        clipPath: "circle(100% at 63% 36%)",
+      });
+    });
+    mm.add("(min-width: 768px)", () => {
+      gsap.to(imageContainerRef.current, {
+        scrollTrigger: {
+          trigger: imageContainerRef.current,
+          start: "top 50%",
+          end: "bottom 50%",
+          scrub: true,
+        },
+        clipPath: "circle(100% at 63% 36%)",
+      });
     });
 
     let textAnimation = gsap.timeline({
@@ -41,20 +65,17 @@ const About = () => {
       },
     });
 
-    textAnimation
-      .to([nameRef.current, lastNameRef.current], {
-        transform: "translate(0%, 0%)",
-        stagger: {
-          each: 0.03,
-        },
-      })
-      .to(wordsRefArray.current, {
+    textAnimation.to(
+      wordsRefArray.current,
+      {
         translateY: "0%",
         stagger: {
           each: 0.01,
         },
-      });
-  }, []);
+      },
+      "outSplash",
+    );
+  });
 
   const addToWordsArray = (element: HTMLSpanElement) => {
     if (element && !wordsRefArray.current.includes(element)) {
@@ -65,8 +86,9 @@ const About = () => {
   return (
     <SectionLayout title="about me" id="about" className={styles.section}>
       <div className={styles.content}>
-        <div ref={imageRef} className={styles.imgContainer}>
+        <div ref={imageContainerRef} className={styles.imgContainer}>
           <Image
+            ref={imageRef}
             className={styles.image}
             src={"/me.jpeg"}
             width={969}
@@ -75,15 +97,6 @@ const About = () => {
           />
         </div>
         <div className={styles.text}>
-          <h3 ref={contentRef}>
-            <span className={styles.mask}>
-              <span ref={nameRef}>Nikon</span>
-            </span>
-            <br />
-            <span className={styles.mask}>
-              <span ref={lastNameRef}>Sharipov</span>
-            </span>
-          </h3>
           <div className={styles.body}>
             {description.split(" ").map((item, index) => (
               <span key={index} className={styles.mask}>

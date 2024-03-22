@@ -1,3 +1,7 @@
+.section {
+  margin-top: 100px;
+}
+
 .content {
   margin-top: 60px;
   display: flex;
@@ -8,11 +12,15 @@
   .imgContainer {
     width: 100%;
     max-width: 50vw;
-    clip-path: circle(13% at 63% 38%);
+    height: 35vw;
+    display: flex;
+    align-items: center;
+    border-radius: 160px;
+    clip-path: circle(13% at 63% 36%);
+    overflow: hidden;
   }
 
   .image {
-    border-radius: 160px;
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -53,11 +61,8 @@
   @media ($media-md) {
     flex-wrap: wrap;
 
-    .imgContainer { 
+    .imgContainer {
       max-width: 70vw;
-    }
-
-    .image {
       border-radius: 130px;
     }
 
@@ -78,9 +83,6 @@
 
     .imgContainer {
       max-width: 100%;
-    }
-
-    .image {
       border-radius: 50px;
     }
 

@@ -1,7 +1,8 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { MouseEvent, useRef } from "react";
+import { MouseEvent } from "react";
 import SectionLayout from "../section-layout";
 import styles from "./stack.module.scss";
 
@@ -33,24 +34,34 @@ const skills = [
 ];
 
 const Stack = () => {
-  const manageMouseEnter = (e: MouseEvent<HTMLLIElement>, index: number) => {
-    gsap.to(e.target, {
-      top: "-30px",
-      backgroundColor: skills[index].color,
-      color: "#1d1d1d",
-      duration: 0.3,
-    });
-  };
+  const mm = gsap.matchMedia();
 
-  const manageMouseLeave = (e: MouseEvent<HTMLLIElement>, index: number) => {
-    gsap.to(e.target, {
-      top: "0",
-      backgroundColor: "white",
-      color: "#424242",
-      duration: 0.3,
-      delay: 0.1,
+  const { contextSafe } = useGSAP();
+
+  const manageMouseEnter = contextSafe(
+    (e: MouseEvent<HTMLLIElement>, index: number) => {
+      mm.add("(min-width: 768px)", () => {
+        gsap.to(e.target, {
+          top: "-30px",
+          backgroundColor: skills[index].color,
+          color: "#1d1d1d",
+          duration: 0.3,
+        });
+      });
+    },
+  );
+
+  const manageMouseLeave = contextSafe((e: MouseEvent<HTMLLIElement>) => {
+    mm.add("(min-width: 768px)", () => {
+      gsap.to(e.target, {
+        top: "0",
+        backgroundColor: "white",
+        color: "#424242",
+        duration: 0.3,
+        delay: 0.1,
+      });
     });
-  };
+  });
 
   return (
     <SectionLayout title="my stack" id="stack" className={styles.section}>
@@ -62,7 +73,7 @@ const Stack = () => {
                 manageMouseEnter(e, index);
               }}
               onMouseLeave={(e) => {
-                manageMouseLeave(e, index);
+                manageMouseLeave(e);
               }}
               className={styles.listItem}
               key={skill.text}>
