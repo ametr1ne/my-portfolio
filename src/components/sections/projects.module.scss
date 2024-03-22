@@ -2,9 +2,17 @@
   display: flex;
   flex-direction: column;
 
-  h4 {
-    font-size: 100px;
-    font-weight: 600;
-    margin: 100px auto;
+  .content {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+  }
+
+  @media ($media-sm) {
+    .content {
+      margin-top: 40px;
+      gap: 80px;
+    }
   }
 }

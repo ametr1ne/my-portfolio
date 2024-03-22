@@ -1,0 +1,44 @@
+.button {
+  position: relative;
+  padding: 5px 15px;
+  border: 1px solid $secondary-color;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  overflow: hidden;
+  font-weight: 600;
+  transition: color 0.3s ease-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 120%;
+    background-color: $secondary-color;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+   
+    border-radius: 50%;
+    z-index: -1;
+    transition: height 0.3s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: $primary-color;
+
+      &::after {
+        width: 150%;
+        height: 250%;
+      }
+    }
+  }
+
+  &:active {
+    color: $primary-color;
+    background-color: $secondary-color;
+  }
+}

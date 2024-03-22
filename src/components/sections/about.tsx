@@ -8,10 +8,9 @@ import { useRef } from "react";
 import SectionLayout from "../section-layout";
 import styles from "./about.module.scss";
 
-const description = `Hey, I'm Nikon, front-end developer. I adore beautiful designs and
-coding. When I was little, I went to a drawing class, but then I
-gave up. But the feeling of beauty remains and I am ready to help
-you show your ideas to the whole world`;
+const description = `Hi, my name is Nikon. I develop admin dashboards, corporate, commercial websites
+and landing pages. I love structure and elegance. I will be happy to help you convey your ideas and 
+desires to the whole world within the framework of my competencies.`;
 
 const About = () => {
   const contentRef = useRef(null);
@@ -85,26 +84,28 @@ const About = () => {
 
   return (
     <SectionLayout title="about me" id="about" className={styles.section}>
-      <div className={styles.content}>
-        <div ref={imageContainerRef} className={styles.imgContainer}>
-          <Image
-            ref={imageRef}
-            className={styles.image}
-            src={"/me.jpeg"}
-            width={969}
-            height={835}
-            alt="photo"
-          />
-        </div>
-        <div className={styles.text}>
-          <div className={styles.body}>
-            {description.split(" ").map((item, index) => (
-              <span key={index} className={styles.mask}>
-                <span className={styles.word} ref={addToWordsArray}>
-                  {item}&nbsp;
+      <div className="container">
+        <div className={styles.content}>
+          <div ref={imageContainerRef} className={styles.imgContainer}>
+            <Image
+              ref={imageRef}
+              className={styles.image}
+              src={"/me.webp"}
+              width={969}
+              height={835}
+              alt="photo"
+            />
+          </div>
+          <div className={styles.text}>
+            <div className={styles.body}>
+              {description.split(" ").map((item, index) => (
+                <span key={index} className={styles.mask}>
+                  <span className={styles.word} ref={addToWordsArray}>
+                    {item}&nbsp;
+                  </span>
                 </span>
-              </span>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

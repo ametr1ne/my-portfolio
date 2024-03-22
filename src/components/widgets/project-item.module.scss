@@ -1,0 +1,142 @@
+.project {
+  display: flex;
+  gap: 50px;
+
+  .imageContainer {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 50vw;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .info {
+    width: 100%;
+    font-weight: 500;
+
+    .name {
+      font-size: 65px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+
+      .badgeMask {
+        overflow: hidden;
+        vertical-align: top;
+        display: inline-flex;
+      }
+    }
+    .description {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .wordMask {
+      overflow: hidden;
+      display: inline-flex;
+    }
+  }
+
+  .tech {
+    display: flex;
+    font-size: 24px;
+    gap: 10px;
+    margin-bottom: 30px;
+
+    &List {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    &Item {
+      a {
+        white-space: nowrap;
+      }
+
+      .wordContainer {
+        position: relative;
+        overflow: hidden;
+        display: inline-flex;
+
+        span {
+          text-decoration: underline;
+        }
+
+        .word,
+        .wordMask {
+          transition: transform 0.5s ease;
+        }
+
+        .wordMask {
+          left: 0;
+          position: absolute;
+          transform: translateY(100%);
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          .wordContainer {
+            .word {
+              transform: translateY(-100%);
+            }
+            .wordMask {
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media ($media-md) {
+    .info {
+      .name {
+        font-size: 50px;
+      }
+      .description {
+        font-size: 24px;
+      }
+    }
+
+    .tech {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .info {
+      .name {
+        font-size: 40px;
+      }
+    }
+  }
+
+  @media ($media-sm) {
+    flex-direction: column;
+    gap: 20px;
+
+    .imageContainer {
+      max-width: 100%;
+      align-items: flex-start;
+
+      img {
+        height: 40vh;
+        object-fit: cover;
+        object-position: center 15%;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .imageContainer {
+      img {
+        height: 300px;
+      }
+    }
+  }
+}
