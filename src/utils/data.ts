@@ -50,26 +50,6 @@ export const projects: TProject[] = [
     year: 2023,
   },
   {
-    name: "Yakovlev Portal",
-    description:
-      "A web portal for employees. The layout was designed using the BEM methodology, as well as taking into account the support of Internet Explorer.",
-    image: {
-      src: yakovlevImage,
-      path: "/projects/yakovlev.webp",
-    },
-    stack: [
-      {
-        name: "BEM",
-        link: "https://ru.bem.info/",
-      },
-      {
-        name: "SCSS",
-        link: "https://sass-lang.com/",
-      },
-    ],
-    year: 2023,
-  },
-  {
     name: "Yodiz School Personal Account",
     description:
       "User's personal account with web design courses. A course system with schedule and student progress statistics have been developed from scratch. Integrated with Wordpress",
