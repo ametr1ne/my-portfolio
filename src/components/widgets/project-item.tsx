@@ -139,8 +139,8 @@ const ProjectItem = ({ project }: Props) => {
       </div>
       <div className={styles.info}>
         <h3 className={styles.name}>
-          {project.name.split(" ").map((word) => (
-            <span className={styles.wordMask}>
+          {project.name.split(" ").map((word, ind) => (
+            <span className={styles.wordMask} key={ind}>
               <span ref={addToName} className={styles.word}>
                 {word}&nbsp;
               </span>
@@ -153,8 +153,8 @@ const ProjectItem = ({ project }: Props) => {
           </span>
         </h3>
         <p className={styles.description}>
-          {project.description.split(" ").map((word) => (
-            <span className={styles.wordMask}>
+          {project.description.split(" ").map((word, ind) => (
+            <span className={styles.wordMask} key={ind}>
               <span ref={addToDesctiption} className={styles.word}>
                 {word}&nbsp;
               </span>
@@ -165,7 +165,7 @@ const ProjectItem = ({ project }: Props) => {
           <p>Technologies: </p>
           <ul className={styles.techList}>
             {project.stack.map((item, index) => (
-              <li className={styles.techItem}>
+              <li className={styles.techItem} key={item.name}>
                 <Link href={item.link} target="_blank">
                   <span className={styles.wordContainer}>
                     <span className={styles.word}>{item.name}</span>

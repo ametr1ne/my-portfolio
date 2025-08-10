@@ -9,7 +9,7 @@ const Projects = () => {
       <div className="container">
         <div className={styles.content}>
           {projects.map((project) => (
-            <ProjectItem project={project} />
+            <ProjectItem project={project} key={project.name} />
           ))}
         </div>
       </div>
