@@ -133,7 +133,7 @@ const ProjectItem = ({ project }: Props) => {
           width={project.image.src.width}
           height={project.image.src.height}
           quality={100}
-          alt="project-cover"
+          alt="project cover image"
           ref={imageRef}
         />
       </div>
