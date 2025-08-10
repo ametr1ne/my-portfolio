@@ -126,9 +126,10 @@ const ProjectItem = ({ project }: Props) => {
       <div
         className={styles.imageContainer}
         ref={imageContainerRef}
-        style={{ height: containerHeight }}>
+        style={{ height: containerHeight }}
+      >
         <Image
-          src={project.image.path}
+          src={project.image.src}
           width={project.image.src.width}
           height={project.image.src.height}
           quality={100}
