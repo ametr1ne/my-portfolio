@@ -1,27 +1,26 @@
 # 1. Сборка
-FROM node:18-alpine AS builder
+FROM node:22.11.0-alpine AS base
 
+FROM base as dependencies
 WORKDIR /app
-
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+RUN yarn install
 
-COPY . .
-RUN yarn build
-
-# 2. Продакшен
-FROM node:18-alpine AS runner
-
+FROM base as build
 WORKDIR /app
-ENV NODE_ENV production
+COPY --from=dependencies /app/node_modules ./node_modules
+COPY . .
+ENV NEXT_TELEMETRY_DISABLED=1
+RUN yarn run build
 
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/yarn.lock ./
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.js ./next.config.js
+FROM base as runner
+WORKDIR /app
+ENV NODE_ENV=production \
+    NEXT_TELEMETRY_DISABLED=1 \
+    HOSTNAME="0.0.0.0"
+COPY --from=build /app/public ./public
+RUN mkdir .next
+COPY --from=build /app/.next/standalone ./
+COPY --from=build /app/.next/static ./.next/static
 
-EXPOSE 3000
-
-CMD ["yarn", "start"]
+CMD ["node", "server.js"]
