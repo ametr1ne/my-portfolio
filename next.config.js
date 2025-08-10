@@ -7,7 +7,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles")],
     prependData: `@import "/src/styles/vars.scss";`,
   },
-  output: "standalone",
+  output: "export",
 };
 
 module.exports = nextConfig;
