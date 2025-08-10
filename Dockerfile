@@ -4,13 +4,14 @@ FROM node:22.11.0-alpine AS base
 FROM base as dependencies
 WORKDIR /app
 COPY package.json yarn.lock ./
-RUN yarn install
+RUN yarn install --frozen-lockfile
 
 FROM base as build
 WORKDIR /app
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
+RUN yarn cache clean
 RUN yarn run build
 
 FROM base as runner
